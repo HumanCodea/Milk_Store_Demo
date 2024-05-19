@@ -20,7 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.MilkStore.model.Milk;
 import com.example.MilkStore.model.MilkDTO;
+import com.example.MilkStore.model.MyMilk;
 import com.example.MilkStore.service.MilkService;
+import com.example.MilkStore.service.MyMilkServices;
 
 @Controller
 @RequestMapping(path = "")
@@ -28,6 +30,9 @@ public class MilkController {
 
     @Autowired
     private MilkService milkService;
+
+    @Autowired
+    private MyMilkServices myMilkServices;
     
     @GetMapping("/home")
     public String Home(){
@@ -110,4 +115,19 @@ public class MilkController {
         return "redirect:/available_milk";
     }
 
+    @GetMapping("/mylist/{id}")
+    public String addToMyMilk(@ModelAttribute("id") int id){
+        Milk milk = milkService.findMilkById(id);
+        MyMilk myMilk = new MyMilk(milk.getId(), milk.getNameMilk(), milk.getTypeMilk(), milk.getDateMilk(), milk.getAcountMilk(), milk.getPricesMilk(), milk.getPhotoMilk());
+        myMilkServices.SaveMyMilk(myMilk);
+        return "redirect:/my_milk";
+    }
+
+    @GetMapping("/search_milk")
+    public String SearchMilk(@Param("nameMilk") String nameMilk, Model model){
+        List<Milk> list = milkService.findByNameMilk(nameMilk);
+        model.addAttribute("nameMilk", nameMilk);
+        model.addAttribute("Milk", list);
+        return "searchMilk";
+    }
 }
