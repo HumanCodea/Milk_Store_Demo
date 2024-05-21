@@ -33,4 +33,8 @@ public class MilkService{
     public void saveMilk(Milk milk){
         milkRepository.save(milk);
     }
+
+    public int findCountMilk(){
+        return milkRepository.findCountMilk();
+    }
 }

@@ -44,15 +44,24 @@ public class MilkController {
         return "homeAdmin";
     }
 
+    @GetMapping("/list_milk")
+    public String ListMilkUser(Model model){
+        List<Milk> list = milkService.getAllMilk();
+        int count = milkService.findCountMilk();
+        model.addAttribute("Milk", list);
+        model.addAttribute("count", count);
+        return "listMilkUser";
+    }
+
     @GetMapping("/available_milk")
-    public String ListMilk(Model model, @Param("nameMilk") String nameMilk){
+    public String ManageMilk(Model model, @Param("nameMilk") String nameMilk){
         List<Milk> list = milkService.getAllMilk();
         if(nameMilk != null){
             list = milkService.findByNameMilk(nameMilk);
             model.addAttribute("nameMilk", nameMilk);
         }
         model.addAttribute("Milk", list);
-        return "listMilk";
+        return "ManageMilk";
     }
 
     @GetMapping("deleteList/{id}")

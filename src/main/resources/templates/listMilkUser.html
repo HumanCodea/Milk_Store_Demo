@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    <html lang="en" xmlns:th="https://www.thymeleaf.com"></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{./css/style.css}">
+    <title>Milk Store</title>
+  </head>
+  <body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white" th:href="@{/home}">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" th:href="@{/list_milk}">List Milk</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/cart_milk}">Cart Milk</a>
+                  </li>
+                </ul>
+                <form th:action="search_milk" class="d-flex">
+                  <input name="nameMilk" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" th:value="${nameMilk}">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div>
+                  <a class="nav-link text-white" th:href="@{/login}">Sign in</a>
+              </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container" style="width: auto;">
+        <div class="contained">
+            <section>
+                <div class="container_bar">
+                    <div class="container_result">
+                        <h3>DANH SÁCH SẢN PHẨM</h3>
+                        <h4 th:text="@{${count} + ' Sản Phẩm'}"></h4>
+                    </div>
+                    <div class="container_sort">
+                        <h3>SẮP XẾP THEO</h3>
+                        <div class="dropdown">
+                            <div class="button">
+                                <div class="button_tf">Tiêu biểu</div>
+                                <div class="btn-dropdown"><i class='bx bx-chevron-down'></i></div>
+                            </div>
+                            <div class="dropdown_content">
+                                <a href="">Tiêu biểu</a>
+                                <a href="">Hàng mới về</a>
+                                <a href="">Từ thấp đến cao</a>
+                                <a href="">Từ cao đến thấp</a>
+                                <a href="" style="border-bottom: 1px solid #000;">Xếp hạng cao nhất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower">
+                    <div class="w4">
+                        <div class="sticky-global">
+                            <div class="pbt-xxs">
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Loại Sữa</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Sữa Dành Cho Trẻ Em</a>
+                                        <a href="">Sữa Dành Cho Người Lớn</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Danh Mục</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Chọn phân loại</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Danh Mục Phụ</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Chọn danh mục</a>
+                                    </div>
+                                </div>
+                                <div class="fr-h-rule"><hr></div>
+                            </div>
+                            <div class="pbt-xxs">
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Kích cỡ</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Bé</a>
+                                        <a href="">To</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Giá</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Dưới 199.000 VND</a>
+                                        <a href="">199.000 VND - 299.000 VND</a>
+                                        <a href="">299.000 VND - 399.000 VND</a>
+                                        <a href="">399.000 VND - 499.000 VND</a>
+                                        <a href="">499.000 VND - 799.000 VND</a>
+                                        <a href="">799.000 VND - 999.000 VND</a>
+                                        <a href="">Trên 999.000 VND</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <div class="button">
+                                        <div class="button_tf">Tiêu chí khác</div>
+                                        <div class="btn_droprow"><i class='bx bx-chevron-down'></i></div>
+                                    </div>
+                                    <div class="droprow_content">
+                                        <a href="">Limited Offer</a>
+                                        <a href="">Sale</a>
+                                        <a href="">New</a>
+                                        <a href="">Coming Soon</a>
+                                        <a href="">Limited Store</a>
+                                        <a href="">Sản phẩm được làm từ chất liệu tái chế</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w12">
+                        <div class="fr-product-grid"> 
+                            <div class="fr-grid-item" th:each="m :${Milk}">
+                                <img th:src="@{'/picture/' + ${m.photoMilk}}" alt="">
+                                <div class="gender-size">
+                                    <div class="gender" th:text="${m.typeMilk}"></div>
+                                    <div class="size" th:text="${m.dateMilk}"></div>
+                                </div>
+                                <h2 class="name_product" th:text="${m.nameMilk}"></h2>
+                                    <div class="price" th:text="@{${m.pricesMilk} + '$'}"></div>
+                                <button class="addCart">
+                                    Add To Cart
+                                </button>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+
+  </body>
+</html>

@@ -21,7 +21,7 @@ public class ConfigSercurity{
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.csrf(csrf -> csrf.disable())
         .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/home","/picture/**","/js/**", "/css/**","/fonts/**","/register","/saveUser","/search_milk").permitAll()
+        .requestMatchers("/home","/picture/**","/js/**", "/css/**","/fonts/**","/register","/saveUser","/search_milk","/list_milk").permitAll()
         .anyRequest().authenticated())
         .formLogin(login -> login.loginPage("/login").permitAll()
         )
