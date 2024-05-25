@@ -37,4 +37,12 @@ public class MilkService{
     public int findCountMilk(){
         return milkRepository.findCountMilk();
     }
+
+    public List<Milk> sortMilkASC(){
+        return milkRepository.sortMilkASC();
+    }
+
+    public List<Milk> sortMilkDESC(){
+        return milkRepository.sortMilkDESC();
+    }
 }

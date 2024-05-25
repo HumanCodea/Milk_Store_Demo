@@ -53,6 +53,24 @@ public class MilkController {
         return "listMilkUser";
     }
 
+    @GetMapping("/sortASC")
+    public String SortMilkASC(Model model){
+        List<Milk> list = milkService.sortMilkASC();
+        int count = milkService.findCountMilk();
+        model.addAttribute("Milk", list);
+        model.addAttribute("count", count);
+        return "listMilkUser";
+    }
+
+    @GetMapping("/sortDESC")
+    public String SortMilkDESC(Model model){
+        List<Milk> list = milkService.sortMilkDESC();
+        int count = milkService.findCountMilk();
+        model.addAttribute("Milk", list);
+        model.addAttribute("count", count);
+        return "listMilkUser";
+    }
+
     @GetMapping("/available_milk")
     public String ManageMilk(Model model, @Param("nameMilk") String nameMilk){
         List<Milk> list = milkService.getAllMilk();

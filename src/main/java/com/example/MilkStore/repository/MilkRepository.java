@@ -15,4 +15,11 @@ public interface MilkRepository extends JpaRepository<Milk, Integer> {
 
     @Query("Select count(*) From Milk")
     public int findCountMilk();
+
+    @Query("Select m From Milk m ORDER BY m.pricesMilk ASC")
+    public List<Milk> sortMilkASC();
+
+    @Query("Select m From Milk m ORDER BY m.pricesMilk DESC")
+    public List<Milk> sortMilkDESC();
+ 
 }
