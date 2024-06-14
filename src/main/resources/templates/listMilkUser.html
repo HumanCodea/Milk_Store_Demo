@@ -12,6 +12,15 @@
   </head>
   <body>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
             <div class="container-fluid">
@@ -26,6 +35,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-white" th:href="@{/cart_milk}">Cart Milk</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{/favourite_milk}">Favourite Milk</a>
                   </li>
                 </ul>
                 <form th:action="search_milk" class="d-flex">
@@ -153,9 +165,9 @@
                                 </div>
                                 <h2 class="name_product" th:text="${m.nameMilk}"></h2>
                                     <div class="price" th:text="@{${m.pricesMilk} + '$'}"></div>
-                                <button class="addCart">
+                                <a style="text-decoration: none;" class="addCart" th:href="@{/mylist/{id}(id=${m.id})}">
                                     Add To Cart
-                                </button>   
+                                </a>  
                             </div>
                         </div>
                     </div>

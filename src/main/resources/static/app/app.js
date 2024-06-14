@@ -17,14 +17,14 @@ dropdownBtn.addEventListener('click', function(){
     dropdownBtn.classList.toggle('rotate')
 })
 
-listProduct.addEventListener('click', (even) =>{
-    let positionClick = even.target;
-    if(positionClick.classList.contains('addCart')){
-        totalQuantity += 1;
-    }
-    addCountToHTML();
-    addCountToMemory();
-})
+// listProduct.addEventListener('click', (even) =>{
+//     let positionClick = even.target;
+//     if(positionClick.classList.contains('addCart')){
+//         totalQuantity += 1;
+//     }
+//     addCountToHTML();
+//     addCountToMemory();
+// })
 
 const addCountToHTML = () =>{
     if(totalQuantity == 0){

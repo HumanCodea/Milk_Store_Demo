@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 1200px;
+    font-family: sans-serif;
+}
+
+.task_bar{
+    height: 60px;
+    width: 100%;
+    background: #1d1d1d;
+    display: flex;
+    align-items: center;
+}
+
+.nav_bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 12px;
+}
+
+.nav_bar .home_tool{
+    padding: 5px;
+}
+
+.nav_bar a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.nav_bar .act_tool{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+.act_tool #search{
+    padding: 10px;
+    width: 220px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.act_tool .search_btn{
+    padding: 10px 15px;
+    background: #1d1d1d;
+    border: 1px solid rgb(27, 117, 19);
+    color: rgb(27, 117, 19);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* container */
+.container{
+    width: calc(1232px + 2* 20px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container_content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container .header{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.container .left_container{
+    margin-top: 50px;
+    width: 62.5%;
+}
+
+.left_container .cart_milk{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-top: 40px;
+}
+
+.cart_milk .image_section{
+    width: 250px;
+}
+
+.cart_content{
+    display: flex;
+}
+
+.image_section img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.milk_content{
+    margin-left: 30px;
+    margin-bottom: 50px;
+}
+
+.infor .name_milk{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.infor .milk{
+    display: flex;
+    font-weight: bold;
+}
+
+.infor .milk h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.footer_content{
+    display: flex;
+    margin-top: 60px;
+}
+
+.sum_prices{
+    display: flex;
+    align-items: center;
+    margin-left: 188px;
+}
+
+.sum_prices h2{
+    font-size: 16px;
+    font-weight: normal;
+    margin-right: 8px;
+}
+
+.sum_prices h3{
+    font-size: 18px;
+}
+
+.count h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.dropdown{
+    display: inline;
+}
+
+.button{
+    color: #1d1d1d;
+    padding: 10px 8px;
+    width: 105px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #8d8d8d;
+}
+
+.dropdown .button .button_tf{
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+.dropdown .btn-dropdown{
+    font-size: 24px;
+    color: #8d8d8d;
+    transition: 0.2s all ease;
+}
+
+.dropdown a{
+    display: block;
+    color: black;
+    width: 105px;
+    padding: 10px 8px;
+    font-size: 16px;
+    text-decoration: none;
+    border-left: 1px solid #8d8d8d;
+    border-right: 1px solid #8d8d8d;
+}
+
+.dropdown .dropdown_content{
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    background-color: white;
+}
+
+.dropdown_content::after {
+    position: absolute;
+    color: black;
+    background-color: white;
+}
+
+.show{
+    display: block !important;
+}
+
+.rotate{
+    transform: rotate(-180deg);
+    transition: 0.2s all ease;
+}
+
+.dropdown:hover button{
+    background-color: hsl(0, 0%, 70%);
+}
+
+.dropdown a:hover{
+    background-color: rgba(0, 0, 0, 0.035);
+    color: #378694;
+}
+
+.remove{
+    margin-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.right_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 31.25%;
+}
+
+.title_right{
+    padding: 28px 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 28px;
+}
+
+.fr_table>table {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.fr_table tbody{
+    display: block;
+}
+
+/* .fr_table tfoot>tr */
+
+.fr_table tbody>tr{
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fr_table tbody .sum{
+    padding: 0px 0px 16px;
+    font-size: 16px;
+}
+
+.fr_table tbody .header_row{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fr_table tbody .tax{
+    padding-top: 10px;
+    font-size: 16px;
+    padding-bottom: 30px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .th1{
+    padding: 12px 15px 0px 0px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.footer .th2{
+    font-size: 16px;
+    padding: 30px 0px 0px;
+    display: flex;
+}
+
+.footer .th2 span{
+    padding-left: 5px;
+}
+
+/* sale */
+.sale{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0px;
+    padding: 14px 0px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sale_content span{
+    padding: 0px 10px;
+}
+
+.sale_icon{
+    font-size: 24px;
+}
+
+.gift{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.gift_content span{
+    padding: 0px 10px;
+}
+
+.gift_icon{
+    font-size: 24px;
+}
+
+.fr_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fr_wrapper span{
+    font-size: 16x;
+    line-height: 24px;
+    padding-right: 30px;
+}
+
+.fr_wrapper i{
+    font-size: 24px;
+    color: #8d8d8d;
+}
+
+.payment{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.payment .pay_btn{
+    padding: 14px 139px;
+    background: red;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.payment .pay_btn:hover{
+    background: rgb(249, 56, 56);
+}
+
+.buyment{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.buyment .buy_btn{
+    padding: 14px 114px;
+    background: white;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+.buyment .buy_btn:hover{
+    color: rgb(112, 112, 112);
+}
+
+.fr_note{
+    color: #7D7D7D;
+    font-size: 13px;
+}

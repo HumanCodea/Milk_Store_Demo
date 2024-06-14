@@ -225,6 +225,7 @@ body{
 .fr-grid-item .price{
     font-weight: bold;
     text-align: center;
+    margin-bottom: 13px;
 }
 
 .fr-grid-item .addCart{
