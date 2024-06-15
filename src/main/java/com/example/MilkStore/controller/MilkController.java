@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.MilkStore.model.Milk;
@@ -41,7 +42,9 @@ public class MilkController {
     @GetMapping("/cart_milk")
     public String CartMilk(Model model){
         List<MyMilk> list = myMilkServices.getAllMyMilk();
+        int count = myMilkServices.findCountCartMilk();
         model.addAttribute("Milk", list);
+        model.addAttribute("count", count);
         return "cartMilk";
     }
 
@@ -69,5 +72,19 @@ public class MilkController {
         model.addAttribute("nameMilk", nameMilk);
         model.addAttribute("Milk", list);
         return "searchMilk";
+    }
+
+    @GetMapping("/cart_milk/{id}")
+    public String addToCartMilk(@ModelAttribute("id") int id){
+        Milk milk = milkService.findMilkById(id);
+        MyMilk myMilk = new MyMilk(milk.getId(), milk.getNameMilk(), milk.getTypeMilk(), milk.getDateMilk(), milk.getAcountMilk(), milk.getPricesMilk(), milk.getPhotoMilk());
+        myMilkServices.SaveMyMilk(myMilk);
+        return "redirect:/cart_milk";
+    }
+
+    @GetMapping("/deleteCartList/{id}")
+    public String DeleteCartMilk(@ModelAttribute("id") int id){
+        myMilkServices.DeleteMyMilk(id);
+        return "redirect:/cart_milk";
     }
 }

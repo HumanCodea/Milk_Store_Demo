@@ -150,7 +150,7 @@ body{
 }
 
 .sum_prices h3{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .count h3{
@@ -247,10 +247,17 @@ body{
 
 .title{
     display: flex;
-    justify-content: space-between;
     font-weight: bold;
     font-size: 19px;
     margin-bottom: 28px;
+}
+
+.title_count{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 6px;
 }
 
 .fr_table>table {

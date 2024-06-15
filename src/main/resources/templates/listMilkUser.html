@@ -165,7 +165,7 @@
                                 </div>
                                 <h2 class="name_product" th:text="${m.nameMilk}"></h2>
                                     <div class="price" th:text="@{${m.pricesMilk} + '$'}"></div>
-                                <a style="text-decoration: none;" class="addCart" th:href="@{/mylist/{id}(id=${m.id})}">
+                                <a style="text-decoration: none;" class="addCart" th:href="@{/cart_milk/{id}(id=${m.id})}">
                                     Add To Cart
                                 </a>  
                             </div>

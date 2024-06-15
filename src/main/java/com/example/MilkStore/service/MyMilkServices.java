@@ -29,4 +29,8 @@ public class MyMilkServices {
     public List<MyMilk> findMyMilkByName(String nameMilk){
         return myMilkRepository.findMyMilkByName(nameMilk);
     }
+
+    public int findCountCartMilk(){
+        return myMilkRepository.findCountCartMilk();
+    }
 }

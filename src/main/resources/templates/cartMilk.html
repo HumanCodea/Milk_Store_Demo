@@ -71,7 +71,7 @@
                                         <h2 class="name_milk" th:text="${m.nameMilk}"></h2>
                                         <div class="milk type">Type: <h3 th:text="${m.typeMilk}"></h3></div>
                                         <div class="milk date">Date: <h3 th:text="${m.dateMilk}"></h3></div>
-                                        <div class="milk prices">Prices: <h3 th:text="@{${m.pricesMilk} + 'VND'}"></h3></div>
+                                        <div class="milk prices">Prices: <h3 th:text="@{${m.pricesMilk} + ' VND'}"></h3></div>
                                     </div>
                                 </div>
                                 <div class="footer_content">
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="remove" style="color: black" th:href="@{/deleteList/{id}(id=${m.id})}" title="Delete Milk">
+                        <a class="remove" style="color: black" th:href="@{/deleteCartList/{id}(id=${m.id})}" title="Delete Milk">
                             <i class='bx bx-x'></i>
                         </a>
                     </div>
@@ -111,8 +111,8 @@
             <div class="right_container">
                 <div class="title_right">
                     <div class="title">
-                        <span>TỔNG ĐƠN HÀNG| 2 SẢN PHẨM</span>
-                        <span></span>
+                        <span>TỔNG ĐƠN HÀNG |</span>
+                        <span class="title_count" th:text="@{${count} +' SẢN PHẨM'}"></span>
                     </div>
                     <div class="fr_table">
                         <table>
@@ -133,7 +133,7 @@
                             <tfoot>
                                 <tr class="footer">
                                     <th class="th1">TỔNG ĐƠN ĐẶT HÀNG</th>
-                                    <th class="th2">1.271.000<span>VND</span></th>
+                                    <th class="th2">1.271.000<span> VND</span></th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="pay_content">
                     <div class="fr_wrapper">
-                        <span>Miễn phí giao hàng áp dụng cho đơn hàng giao tận nơi từ 999.000VND và tất cả các đơn nhận tại cửa hàng (Click & Collect)</span>
+                        <span>Miễn phí giao hàng áp dụng cho đơn hàng giao tận nơi từ 999.000 VND và tất cả các đơn nhận tại cửa hàng (Click & Collect)</span>
                         <i class='bx bxs-info-circle'></i>
                     </div>
                     <div class="payment">
