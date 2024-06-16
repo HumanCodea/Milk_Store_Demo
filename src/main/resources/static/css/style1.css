@@ -151,6 +151,7 @@ body{
 
 .sum_prices h3{
     font-size: 16px;
+    font-weight: bold;
 }
 
 .count h3{
@@ -158,7 +159,7 @@ body{
     font-size: 20px;
 }
 
-.dropdown{
+.drop_down{
     display: inline;
 }
 
@@ -174,18 +175,18 @@ body{
     border: 1px solid #8d8d8d;
 }
 
-.dropdown .button .button_tf{
+.drop_down .button .button_tf{
     font-size: 16px;
     font-weight: 400px;
 }
 
-.dropdown .btn-dropdown{
+.drop_down .btn-dropdown{
     font-size: 24px;
     color: #8d8d8d;
     transition: 0.2s all ease;
 }
 
-.dropdown a{
+.drop_down a{
     display: block;
     color: black;
     width: 105px;
@@ -196,7 +197,7 @@ body{
     border-right: 1px solid #8d8d8d;
 }
 
-.dropdown .dropdown_content{
+.drop_down .dropdown_content{
     display: none;
     position: absolute;
     min-width: 100px;
@@ -218,11 +219,11 @@ body{
     transition: 0.2s all ease;
 }
 
-.dropdown:hover button{
+.drop_down:hover button{
     background-color: hsl(0, 0%, 70%);
 }
 
-.dropdown a:hover{
+.drop_down a:hover{
     background-color: rgba(0, 0, 0, 0.035);
     color: #378694;
 }

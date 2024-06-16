@@ -71,6 +71,8 @@ public class MilkController {
         List<Milk> list = milkService.findByNameMilk(nameMilk);
         model.addAttribute("nameMilk", nameMilk);
         model.addAttribute("Milk", list);
+        int count = list.size();
+        model.addAttribute("count", count);
         return "searchMilk";
     }
 
