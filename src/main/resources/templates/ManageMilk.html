@@ -62,7 +62,7 @@
                     <a class="nav-link active text-white" th:href="@{/available_milk}">Manage Milk</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white" th:href="@{/my_milk}">My Milk</a>
+                    <a class="nav-link text-white" th:href="@{/my_milk}">Manage Cart Milk</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" th:href="@{#}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,10 +76,6 @@
                     </ul>
                   </li>  
                 </ul>
-                <form class="d-flex">
-                  <input name="nameMilk" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" th:value="${nameMilk}">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
                 <div>
                     <a class="nav-link text-white" th:href="@{/milk_register}">New Milk Register</a> <!-- href la dung de xu li khi bam vao-->
                 </div>
@@ -128,7 +124,6 @@
                 <img th:src="@{'/picture/' + ${m.photoMilk}}" alt="" width="100px">
               </td>
               <td>
-                <a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${m.id})}">Add To MyMilk</a>
                 <a style="color: hsl(240, 100%, 60%)" th:href="@{/editList/{id}(id=${m.id})}" title="Edit Milk"><i class='bx bxs-edit ms-4'></i></a>
                 <a style="color: hsl(0, 100%, 60%)" th:href="@{/deleteList/{id}(id=${m.id})}" title="Delete Milk"><i class='bx bx-trash ms-4'></i></a>
               </td>

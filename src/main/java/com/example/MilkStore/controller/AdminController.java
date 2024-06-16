@@ -117,4 +117,21 @@ public class AdminController {
         return "redirect:/my_milk";
     }
 
+    @GetMapping("/my_milk")
+    public String ListMyMilk(Model model, @Param("nameMilk") String nameMilk){
+        List<MyMilk> list = myMilkServices.getAllMyMilk();
+        if(nameMilk != null){
+            list = myMilkServices.findMyMilkByName(nameMilk);
+            model.addAttribute("nameMilk", nameMilk);
+        }
+        model.addAttribute("Milk", list);
+        return "myMilk";
+    }
+
+    @GetMapping("/deleteMyList/{id}")
+    public String DeleteMyMilk(@ModelAttribute("id") int id){
+        myMilkServices.DeleteMyMilk(id);
+        return "redirect:/my_milk";
+    }
+
 }

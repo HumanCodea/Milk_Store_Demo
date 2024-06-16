@@ -64,7 +64,7 @@
                     <a class="nav-link active text-white" th:href="@{/available_milk}">Manage Milk</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white" th:href="@{/my_milk}">My Milk</a>
+                    <a class="nav-link text-white" th:href="@{/my_milk}">Manage Cart Milk</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" th:href="@{#}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,10 +77,6 @@
                     </ul>
                   </li>
                 </ul>
-                <form th:action="available_milk" class="d-flex">
-                  <input name="nameMilk" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" th:value="${nameMilk}">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" th:href="@{#}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
